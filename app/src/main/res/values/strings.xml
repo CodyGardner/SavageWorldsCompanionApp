@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SavageWorldsCompanionApp</string>
     <string name="attributes">Attributes</string>
-    <String name="hindrances">Hindrances</String>
+    <string name="hindrances">Hindrances</string>
     <string name="edges">Edges</string>
     <string name="skills">Skills</string>
     <string name="major">Major</string>
@@ -13,6 +13,12 @@
     <string name="parry">Parry</string>
     <string name="toughness">Toughness</string>
     <string name="race">Race</string>
+    <string name="untrained">UT</string>
+    <string name="d4">D4</string>
+    <string name="d6">D6</string>
+    <string name="d8">D8</string>
+    <string name="d10">D10</string>
+    <string name="d12">D12</string>
     <string name="attrAg">Agility</string>
     <string name="attrAgShort">Ag</string>
     <string name="attrSm">Smarts</string>
