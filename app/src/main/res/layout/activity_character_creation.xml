@@ -7,15 +7,11 @@
     tools:context=".CharacterCreation">
 
     <com.google.android.material.tabs.TabLayout
-        android:layout_width="395dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="0dp">
+        android:background="@color/colorTabBackground"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="6dp">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -33,13 +29,4 @@
             android:text="@string/hindrances" />
     </com.google.android.material.tabs.TabLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

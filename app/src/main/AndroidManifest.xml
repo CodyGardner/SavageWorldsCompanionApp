@@ -10,14 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DiceRoller"></activity>
-        <activity android:name=".CharacterView" />
-        <activity android:name=".CharacterCreation" />
-        <activity android:name=".CharacterSelection">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".CharacterView">
+        </activity>
+        <activity android:name=".CharacterCreation">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity android:name=".CharacterSelection">
+
         </activity>
     </application>
 
