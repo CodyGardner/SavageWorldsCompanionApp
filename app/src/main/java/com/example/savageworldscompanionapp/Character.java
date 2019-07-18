@@ -1,3 +1,5 @@
+package com.example.savageworldscompanionapp;
+
 import java.util.ArrayList;
 
 public class Character {
@@ -5,7 +7,7 @@ public class Character {
     private String imageFilePath;
     private String initFilePath;
 
-    // Character info
+    // com.example.savageworldscompanionapp.Character info
     private String characterName;
     private String characterRace;
     private String characterRank;

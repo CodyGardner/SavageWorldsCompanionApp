@@ -51,4 +51,10 @@
     <string name="taunt">Taunt</string>
     <string name="throwing">Throwing</string>
     <string name="tracking">Tracking</string>
+    <string name="clear">Clear</string>
+    <string name="reroll">Reroll</string>
+    <string name="diceExplode">Explode Dice: </string>
+    <string name="wildDie">Wild Die: </string>
+    <string name="modifier">Modifier: </string>
+    <string name="result">Result: </string>
 </resources>
