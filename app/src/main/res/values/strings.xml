@@ -61,4 +61,14 @@
     <string name="rollD100">Roll D100</string>
     <string name="rollAll">Roll Dice!</string>
     <string name="calculation">Calculation: </string>
+    <string name="title_activity_character_creation">Character Creation</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="character_attribute_fragment">Attribute Fragment</string>
+    <string name="character_hindrance_fragment">Hindrance Fragment</string>
+    <string name="character_skill_fragment">Skill Fragment</string>
+
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
 </resources>
