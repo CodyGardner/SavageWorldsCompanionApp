@@ -30,7 +30,7 @@ public class TestActivity extends AppCompatActivity {
         attrs.add(new Attribute(getString(R.string.attrVi), getString(R.string.attrViShort)));
 
         for (int i = 0; i < attrs.size(); ++i)
-            attrListItems.add(new EditAttributeListItem(attrs.get(i).getName(), attrs.get(i), 0, "D4"));
+            attrListItems.add(new EditAttributeListItem(attrs.get(i)));
 
         recyclerView = findViewById(R.id.AttributeRecyclerView);
         recyclerView.setHasFixedSize(true);

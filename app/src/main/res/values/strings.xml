@@ -63,6 +63,8 @@
     <string name="rollAll">Roll Dice!</string>
     <string name="calculation">Calculation: </string>
     <string name="title_activity_character_creation">Character Creation</string>
+    <string name="attrPoints">Attribute Points Remaining:</string>
+    <string name="hindPoints">Hindrance Points Remaining:</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="character_attribute_fragment">Attribute Fragment</string>

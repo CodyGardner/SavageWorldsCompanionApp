@@ -8,4 +8,12 @@ public class Skill extends Trait{
         super(n);
         associatedAttribute = a;
     }
+
+    public boolean raiseLevel(){
+        return true;
+    }
+
+    public boolean lowerLevel(){
+        return true;
+    }
 }

@@ -5,10 +5,14 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 
 /**
@@ -24,6 +28,12 @@ public class CharacterCreationSkill extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    ArrayList<Attribute> attrs;
+    ArrayList<EditAttributeListItem> attrListItems;
+    RecyclerView recyclerView;
+    RecyclerView.Adapter adapter;
+    RecyclerView.LayoutManager layoutManager;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -66,7 +76,30 @@ public class CharacterCreationSkill extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_character_creation_skill, container, false);
+        View view = inflater.inflate(R.layout.fragment_character_creation_skill, container, false);
+
+
+        attrs = new ArrayList<>();
+        attrListItems = new ArrayList<>();
+
+        attrs.add(new Attribute(getString(R.string.attrAg), getString(R.string.attrAgShort)));
+        attrs.add(new Attribute(getString(R.string.attrSm), getString(R.string.attrSmShort)));
+        attrs.add(new Attribute(getString(R.string.attrSp), getString(R.string.attrSpShort)));
+        attrs.add(new Attribute(getString(R.string.attrSt), getString(R.string.attrStShort)));
+        attrs.add(new Attribute(getString(R.string.attrVi), getString(R.string.attrViShort)));
+
+        for (int i = 0; i < attrs.size(); ++i)
+            attrListItems.add(new EditAttributeListItem(attrs.get(i)));
+
+        recyclerView = view.findViewById(R.id.AttributeRecyclerView);
+        recyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(getContext());
+        adapter = new EditAttributeAdapter(attrListItems);
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
