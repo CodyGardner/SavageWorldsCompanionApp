@@ -25,6 +25,9 @@ public class TestActivity extends AppCompatActivity {
 
         attrs.add(new Attribute(getString(R.string.attrAg), getString(R.string.attrAgShort)));
         attrs.add(new Attribute(getString(R.string.attrSm), getString(R.string.attrSmShort)));
+        attrs.add(new Attribute(getString(R.string.attrSp), getString(R.string.attrSpShort)));
+        attrs.add(new Attribute(getString(R.string.attrSt), getString(R.string.attrStShort)));
+        attrs.add(new Attribute(getString(R.string.attrVi), getString(R.string.attrViShort)));
 
         for (int i = 0; i < attrs.size(); ++i)
             attrListItems.add(new EditAttributeListItem(attrs.get(i).getName(), attrs.get(i), 0, "D4"));
