@@ -31,6 +31,56 @@ public class EditAttributeAdapter extends RecyclerView.Adapter<EditAttributeAdap
             modifier = itemView.findViewById(R.id.modifierTextBox);
             attributeLevel = itemView.findViewById(R.id.dieTypeTextView);
 
+            raiseAttributeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(attribute.raiseLevel()){
+                        switch(attribute.getLevel()){
+                            case 1:
+                                attributeLevel.setText("D4");
+                                break;
+                            case 2:
+                                attributeLevel.setText("D6");
+                                break;
+                            case 3:
+                                attributeLevel.setText("D8");
+                                break;
+                            case 4:
+                                attributeLevel.setText("D10");
+                                break;
+                            case 5:
+                                attributeLevel.setText("D12");
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            });
+            lowerAttributeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(attribute.lowerLevel()){
+                        switch(attribute.getLevel()){
+                            case 1:
+                                attributeLevel.setText("D4");
+                                break;
+                            case 2:
+                                attributeLevel.setText("D6");
+                                break;
+                            case 3:
+                                attributeLevel.setText("D8");
+                                break;
+                            case 4:
+                                attributeLevel.setText("D10");
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                }
+            });
         }
     }
 
@@ -51,6 +101,7 @@ public class EditAttributeAdapter extends RecyclerView.Adapter<EditAttributeAdap
         holder.attributeName.setText(item.getAttribute().getName());
         holder.attributeLevel.setText("D4");
         holder.modifier.setText(Integer.toString(item.getAttribute().getModifier()));
+        holder.attribute = item.getAttribute();
     }
 
     @Override

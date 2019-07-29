@@ -1,9 +1,9 @@
 package com.example.savageworldscompanionapp;
 
 abstract class Trait {
-    private String name;
-    private int level;
-    private int modifier;
+    protected String name;
+    protected int level;
+    protected int modifier;
 
     // Constructor
     Trait(String n) { // Every Train must have a name
@@ -16,18 +16,6 @@ abstract class Trait {
     public int getLevel() { return level; }
     public int getModifier() { return modifier; }
     public void setModifier(int i) {modifier = i;}
-    public boolean raiseLevel() {
-        if (level < 5){
-            ++level;
-            return true;
-        }
-        return false;
-    }
-    public boolean lowerLevel() {
-        if (level > 0){
-            --level;
-            return true;
-        }
-        return false;
-    }
+    abstract boolean raiseLevel();
+    abstract boolean lowerLevel();
 }
