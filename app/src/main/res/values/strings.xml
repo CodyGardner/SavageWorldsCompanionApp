@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">SavageWorldsCompanionApp</string>
+    <string name="app_name" translatable="false">SavageWorldsCompanionApp</string>
     <string name="attributes">Attributes</string>
     <string name="hindrances">Hindrances</string>
+    <string name="character_info">Character Info</string>
     <string name="edges">Edges</string>
     <string name="skills">Skills</string>
     <string name="major">Major</string>
@@ -67,8 +68,8 @@
     <string name="character_attribute_fragment">Attribute Fragment</string>
     <string name="character_hindrance_fragment">Hindrance Fragment</string>
     <string name="character_skill_fragment">Skill Fragment</string>
-
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="remaining_point_attribute">Remaining Attribute Points: </string>
+    <string name="remaining_point_hindrance">Remaining Hindrance Points: </string>
+    <string name="remaining_point_skill">Remaining Skill Points:</string>
 
 </resources>

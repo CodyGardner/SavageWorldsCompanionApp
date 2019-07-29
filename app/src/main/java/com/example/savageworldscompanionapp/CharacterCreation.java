@@ -16,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.savageworldscompanionapp.ui.main.SectionsPagerAdapter;
 
 public class CharacterCreation extends AppCompatActivity implements CharacterCreationAttribute.OnFragmentInteractionListener,
                                                                     CharacterCreationHindrance.OnFragmentInteractionListener,
@@ -36,10 +35,9 @@ public class CharacterCreation extends AppCompatActivity implements CharacterCre
         //scrollView = findViewById(R.id.character_creation_scroller);
         //editAgility = new EditAttributeComponent(this, agility);
 
-        //SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
         CharacterCreationPagerAdpater characterCreationPagerAdapter = new
-                CharacterCreationPagerAdpater(getSupportFragmentManager());
+                CharacterCreationPagerAdpater(getSupportFragmentManager(), getApplicationContext());
         viewPager.setAdapter(characterCreationPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);

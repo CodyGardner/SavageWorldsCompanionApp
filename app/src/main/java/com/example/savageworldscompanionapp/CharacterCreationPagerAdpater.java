@@ -1,19 +1,23 @@
 package com.example.savageworldscompanionapp;
 
 
+import android.app.Activity;
 import android.content.Context;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-public class CharacterCreationPagerAdpater extends FragmentStatePagerAdapter {
+public class CharacterCreationPagerAdpater extends FragmentStatePagerAdapter{
 
-    public CharacterCreationPagerAdpater(FragmentManager fm) {
+    private Context mContext;
+    public CharacterCreationPagerAdpater(FragmentManager fm, Context nContext) {
         super(fm);
+        mContext = nContext;
     }
 
-    Context mContext;
+
+
 
 
     @Override
@@ -38,11 +42,11 @@ public class CharacterCreationPagerAdpater extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch(position) {
             case 0:
-                return "Attributes";
+                return mContext.getResources().getString(R.string.character_info);
             case 1:
-                return "Skills";
+                return mContext.getResources().getString(R.string.attributes);
             case 2:
-                return "Hindrances";
+                return mContext.getResources().getString(R.string.skills);
             default:
                 return "Invalid tab";
         }
