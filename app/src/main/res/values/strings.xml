@@ -73,5 +73,9 @@
     <string name="remaining_point_attribute">Remaining Attribute Points: </string>
     <string name="remaining_point_hindrance">Remaining Hindrance Points: </string>
     <string name="remaining_point_skill">Remaining Skill Points:</string>
-
+    <string name="name_label">Name: </string>
+    <string name="race_label">Race: </string>
+    <string name="placeholder_name">Mr. T</string>
+    <string name="placeholder_race">Night Elf Mohawk</string>
+    <string name="num_zero">0</string>
 </resources>
