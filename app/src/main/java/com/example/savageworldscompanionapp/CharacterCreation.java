@@ -23,7 +23,6 @@ public class CharacterCreation extends AppCompatActivity implements CharacterCre
 
     private Attribute agility;
     private ScrollView scrollView;
-    //private EditAttributeComponent editAgility;
 
 
     @Override
@@ -31,9 +30,6 @@ public class CharacterCreation extends AppCompatActivity implements CharacterCre
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_creation);
 
-        agility = new Attribute("Agility", "Ag");
-        //scrollView = findViewById(R.id.character_creation_scroller);
-        //editAgility = new EditAttributeComponent(this, agility);
 
         ViewPager viewPager = findViewById(R.id.view_pager);
         CharacterCreationPagerAdpater characterCreationPagerAdapter = new

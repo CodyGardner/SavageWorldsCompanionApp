@@ -5,10 +5,14 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import java.util.ArrayList;
 
 
 /**
@@ -28,6 +32,12 @@ public class CharacterCreationHindrance extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    ArrayList<Skill> skills;
+    ArrayList<EditSkillListItem> skillListItems;
+    RecyclerView skillRecyclerView;
+    RecyclerView.Adapter skillAdapter;
+    RecyclerView.LayoutManager layoutManager;
 
     private OnFragmentInteractionListener mListener;
 
@@ -63,10 +73,41 @@ public class CharacterCreationHindrance extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_character_creation_hindrance, container, false);
+        View view = inflater.inflate(R.layout.fragment_character_creation_hindrance, container, false);
+
+        skills =  new ArrayList<>();
+        skillListItems = new ArrayList<>();
+
+        Attribute agility = new Attribute("Agility", "Ag");
+        Attribute smarts = new Attribute("Smarts", "Sm");
+        Attribute spirit = new Attribute("Spirit", "Sp");
+        Attribute strength = new Attribute("Strength", "St");
+
+        skills.add(new Skill(strength, "Climbing"));
+        skills.add(new Skill(agility, "Fighting"));
+        skills.add(new Skill(smarts, "Healing"));
+        skills.add(new Skill(smarts, "Investigation"));
+        skills.add(new Skill(agility, "Lockpicking"));
+        skills.add(new Skill(smarts, "Notice"));
+        skills.add(new Skill(spirit, "Persuasion"));
+        skills.add(new Skill(agility, "Shooting"));
+        skills.add(new Skill(agility, "Stealth"));
+        skills.add(new Skill(smarts, "Streetwise"));
+
+        for (int i = 0; i < skills.size(); ++i)
+            skillListItems.add(new EditSkillListItem(skills.get(i)));
+
+        skillRecyclerView = view.findViewById(R.id.SkillsRecyclerView);
+        skillRecyclerView.setHasFixedSize(true);
+        layoutManager = new LinearLayoutManager(getContext());
+        skillAdapter = new EditSkillAdapter(skillListItems);
+
+        skillRecyclerView.setLayoutManager(layoutManager);
+        skillRecyclerView.setAdapter(skillAdapter);
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
