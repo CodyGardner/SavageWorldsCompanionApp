@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 
-/**
+/*
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link CharacterCreationSkill.OnFragmentInteractionListener} interface
@@ -38,6 +38,7 @@ public class CharacterCreationSkill extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Character character;
 
     private OnFragmentInteractionListener mListener;
 
@@ -45,7 +46,11 @@ public class CharacterCreationSkill extends Fragment {
         // Required empty public constructor
     }
 
-    /**
+    public CharacterCreationSkill(Character character){
+        this.character = character;
+    }
+
+    /*
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
@@ -79,17 +84,20 @@ public class CharacterCreationSkill extends Fragment {
         View view = inflater.inflate(R.layout.fragment_character_creation_skill, container, false);
 
 
-        attrs = new ArrayList<>();
+
+        // attrs = new ArrayList<>();
         attrListItems = new ArrayList<>();
 
+        /*
         attrs.add(new Attribute(getString(R.string.attrAg), getString(R.string.attrAgShort)));
         attrs.add(new Attribute(getString(R.string.attrSm), getString(R.string.attrSmShort)));
         attrs.add(new Attribute(getString(R.string.attrSp), getString(R.string.attrSpShort)));
         attrs.add(new Attribute(getString(R.string.attrSt), getString(R.string.attrStShort)));
         attrs.add(new Attribute(getString(R.string.attrVi), getString(R.string.attrViShort)));
+        */
 
-        for (int i = 0; i < attrs.size(); ++i)
-            attrListItems.add(new EditAttributeListItem(attrs.get(i)));
+        for (int i = 0; i < character.getAttributes().size(); ++i)
+            attrListItems.add(new EditAttributeListItem(character.getAttributes().get(i)));
 
         recyclerView = view.findViewById(R.id.AttributeRecyclerView);
         recyclerView.setHasFixedSize(true);
@@ -126,7 +134,7 @@ public class CharacterCreationSkill extends Fragment {
         mListener = null;
     }
 
-    /**
+    /*
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that

@@ -9,14 +9,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 public class CharacterCreationPagerAdpater extends FragmentStatePagerAdapter{
+    Character character;
 
     private Context mContext;
-    public CharacterCreationPagerAdpater(FragmentManager fm, Context nContext) {
+    public CharacterCreationPagerAdpater(FragmentManager fm, Context nContext, Character character) {
         super(fm);
         mContext = nContext;
+        this.character = character;
     }
-
-
 
 
 
@@ -24,11 +24,11 @@ public class CharacterCreationPagerAdpater extends FragmentStatePagerAdapter{
     public Fragment getItem(int position) {
         switch(position) {
             case 0:
-                return new CharacterCreationAttribute();
+                return new CharacterCreationAttribute(character);
             case 1:
-                return new CharacterCreationSkill();
+                return new CharacterCreationSkill(character);
             case 2:
-                return new CharacterCreationHindrance();
+                return new CharacterCreationHindrance(character);
         }
         return new CharacterCreationAttribute();
     }

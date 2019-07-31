@@ -62,7 +62,27 @@ public class Character {
     public void addSkill(Skill s) { skills.add(s); }
 
     // Constructors
-    public Character() { }
+    public Character() {
+        attributes = new ArrayList<>();
+        skills = new ArrayList<>();
+
+        attributes.add(new Attribute("Agility", "Ag"));
+        attributes.add(new Attribute("Smarts", "Sm"));
+        attributes.add(new Attribute("Spirit", "Sp"));
+        attributes.add(new Attribute("Strength", "St"));
+        attributes.add(new Attribute("Vigor", "Vi"));
+
+        skills.add(new Skill(attributes.get(3), "Climbing"));
+        skills.add(new Skill(attributes.get(0), "Fighting"));
+        skills.add(new Skill(attributes.get(1), "Healing"));
+        skills.add(new Skill(attributes.get(1), "Investigation"));
+        skills.add(new Skill(attributes.get(0), "Lockpicking"));
+        skills.add(new Skill(attributes.get(1), "Notice"));
+        skills.add(new Skill(attributes.get(2), "Persuasion"));
+        skills.add(new Skill(attributes.get(0), "Shooting"));
+        skills.add(new Skill(attributes.get(0), "Stealth"));
+        skills.add(new Skill(attributes.get(1), "Streetwise"));
+    }
 
     // Functions
     public void saveCharacter() { } // Save character to init file

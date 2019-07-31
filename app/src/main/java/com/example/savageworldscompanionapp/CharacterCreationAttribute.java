@@ -32,11 +32,16 @@ public class CharacterCreationAttribute extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Character character;
 
     private OnFragmentInteractionListener mListener;
 
     public CharacterCreationAttribute() {
         // Required empty public constructor
+    }
+
+    public CharacterCreationAttribute(Character character){
+        this.character = character;
     }
 
     /**

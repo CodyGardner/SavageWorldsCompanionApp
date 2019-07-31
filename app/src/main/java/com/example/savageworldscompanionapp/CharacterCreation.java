@@ -21,8 +21,7 @@ public class CharacterCreation extends AppCompatActivity implements CharacterCre
                                                                     CharacterCreationHindrance.OnFragmentInteractionListener,
                                                                     CharacterCreationSkill.OnFragmentInteractionListener{
 
-    private Attribute agility;
-    private ScrollView scrollView;
+    private Character character;
 
 
     @Override
@@ -30,10 +29,10 @@ public class CharacterCreation extends AppCompatActivity implements CharacterCre
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_creation);
 
-
+        character = new Character();
         ViewPager viewPager = findViewById(R.id.view_pager);
         CharacterCreationPagerAdpater characterCreationPagerAdapter = new
-                CharacterCreationPagerAdpater(getSupportFragmentManager(), getApplicationContext());
+                CharacterCreationPagerAdpater(getSupportFragmentManager(), getApplicationContext(), character);
         viewPager.setAdapter(characterCreationPagerAdapter);
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);

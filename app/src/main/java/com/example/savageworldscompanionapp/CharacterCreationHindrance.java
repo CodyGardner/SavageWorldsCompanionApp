@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 
-/**
+/*
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
  * {@link CharacterCreationHindrance.OnFragmentInteractionListener} interface
@@ -32,12 +32,13 @@ public class CharacterCreationHindrance extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Character character;
 
     ArrayList<Skill> skills;
     ArrayList<EditSkillListItem> skillListItems;
-    RecyclerView skillRecyclerView;
-    RecyclerView.Adapter skillAdapter;
-    RecyclerView.LayoutManager layoutManager;
+    private RecyclerView skillRecyclerView;
+    private RecyclerView.Adapter skillAdapter;
+    private RecyclerView.LayoutManager layoutManager;
 
     private OnFragmentInteractionListener mListener;
 
@@ -45,7 +46,12 @@ public class CharacterCreationHindrance extends Fragment {
         // Required empty public constructor
     }
 
-    /**
+    public CharacterCreationHindrance(Character character){
+        this.character = character;
+    }
+
+
+    /*
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
@@ -80,6 +86,7 @@ public class CharacterCreationHindrance extends Fragment {
         skills =  new ArrayList<>();
         skillListItems = new ArrayList<>();
 
+        /*
         Attribute agility = new Attribute("Agility", "Ag");
         Attribute smarts = new Attribute("Smarts", "Sm");
         Attribute spirit = new Attribute("Spirit", "Sp");
@@ -95,9 +102,10 @@ public class CharacterCreationHindrance extends Fragment {
         skills.add(new Skill(agility, "Shooting"));
         skills.add(new Skill(agility, "Stealth"));
         skills.add(new Skill(smarts, "Streetwise"));
+        */
 
-        for (int i = 0; i < skills.size(); ++i)
-            skillListItems.add(new EditSkillListItem(skills.get(i)));
+        for (int i = 0; i < character.getSkills().size(); ++i)
+            skillListItems.add(new EditSkillListItem(character.getSkills().get(i)));
 
         skillRecyclerView = view.findViewById(R.id.SkillsRecyclerView);
         skillRecyclerView.setHasFixedSize(true);
@@ -134,7 +142,7 @@ public class CharacterCreationHindrance extends Fragment {
         mListener = null;
     }
 
-    /**
+    /*
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
      * to the activity and potentially other fragments contained in that
