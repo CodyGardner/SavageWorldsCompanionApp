@@ -3,12 +3,17 @@ package com.example.savageworldscompanionapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class CharacterView extends AppCompatActivity {
 
     ImageView image;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,13 @@ public class CharacterView extends AppCompatActivity {
         //Or maybe the Character object, if we choose to build one first
 
         //Define the button and its action
+        FloatingActionButton fab = findViewById(R.id.dieButton);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CharacterView.this, DiceRoller.class));
+            }
+        });
         //Anything passed via intent?
     }
 }
