@@ -63,30 +63,37 @@ public class CharacterView extends AppCompatActivity {
         View v = findViewById(R.id.charViewToolbar);
         registerForContextMenu(v);
 
-        /*
-        //Receive intent
-        Intent i = getIntent();
 
-        //Parse intent elements
-        if(i.getStringExtra("Name") != null)
-            charName.setText(i.getStringExtra("Name"));
-        else
-            charName.setText("Mr. T");
-        if(i.getStringExtra("Race") != null)
-            charName.setText(i.getStringExtra("Race"));
-        else
-            charName.setText("Night Elf Mohawk");
-        strView.setText(i.getIntExtra("Strength",0));
-        spiView.setText(i.getIntExtra("Spirit",0));
-        agiView.setText(i.getIntExtra("Agility",0));
-        smaView.setText(i.getIntExtra("Smarts",0));
-        vigView.setText(i.getIntExtra("Vigor",0));
-        pacView.setText(i.getIntExtra("Pace",0));
-        parView.setText(i.getIntExtra("Parry",0));
-        togView.setText(i.getIntExtra("Toughness",0));
-        majHindView.setText(i.getIntExtra("Major Hindrances",0));
-        minHindView.setText(i.getIntExtra("Minor Hindrances",0));
-        */
+        //Receive intent
+        Intent i;
+        try {
+            i = getIntent();
+
+
+            //Parse intent elements
+            if (i.getStringExtra("Name") != null)
+                charName.setText(i.getStringExtra("Name"));
+            else
+                charName.setText("Mr. T");
+            if (i.getStringExtra("Race") != null)
+                charName.setText(i.getStringExtra("Race"));
+            else
+                charName.setText("Night Elf Mohawk");
+            strView.setText(i.getIntExtra("Strength", 0));
+            spiView.setText(i.getIntExtra("Spirit", 0));
+            agiView.setText(i.getIntExtra("Agility", 0));
+            smaView.setText(i.getIntExtra("Smarts", 0));
+            vigView.setText(i.getIntExtra("Vigor", 0));
+            pacView.setText(i.getIntExtra("Pace", 0));
+            parView.setText(i.getIntExtra("Parry", 0));
+            togView.setText(i.getIntExtra("Toughness", 0));
+            majHindView.setText(i.getIntExtra("Major Hindrances", 0));
+            minHindView.setText(i.getIntExtra("Minor Hindrances", 0));
+        }
+        catch(Exception e) {
+            charName.setText(R.string.placeholder_name);
+            charRace.setText(R.string.placeholder_race);
+        }
 
         //Draw the image. This will eventually be replaced based on the race chosen.
         image=findViewById(R.id.imageView);
