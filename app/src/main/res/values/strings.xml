@@ -82,4 +82,5 @@
     <string name="num_zero">0</string>
     <string name="nameInput">Name: </string>
     <string name="raceInput">Race: </string>
+    <string name="clearCharacter">Clear Character Data</string>
 </resources>

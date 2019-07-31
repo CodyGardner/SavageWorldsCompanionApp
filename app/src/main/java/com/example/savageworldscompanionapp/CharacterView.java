@@ -1,15 +1,20 @@
 package com.example.savageworldscompanionapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class CharacterView extends AppCompatActivity {
@@ -36,6 +41,11 @@ public class CharacterView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_view);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.charViewToolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle(R.string.title_activity_character_view);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
         //Assign TextViews to views
         charName = findViewById(R.id.characterName);
         charRace = findViewById(R.id.characterRace);
@@ -49,6 +59,9 @@ public class CharacterView extends AppCompatActivity {
         togView = findViewById(R.id.togVal);
         majHindView = findViewById(R.id.majHindVal);
         minHindView = findViewById(R.id.minHindVal);
+
+        View v = findViewById(R.id.charViewToolbar);
+        registerForContextMenu(v);
 
         /*
         //Receive intent
@@ -96,5 +109,25 @@ public class CharacterView extends AppCompatActivity {
 
         //TODO: Menu bar to go back to character creation
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        switch(item.getItemId()) {
+            case R.id.clearOption:
+                finish();
+                return true;
+            default:
+                return false;
+        }
     }
 }

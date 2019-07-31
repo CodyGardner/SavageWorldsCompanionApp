@@ -13,15 +13,15 @@
         </activity>
         <activity
             android:name=".CharacterCreation"
-            android:label="@string/title_activity_character_creation"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/title_activity_character_creation">
+
+        </activity>
+        <activity android:name=".DiceRoller" />
+        <activity android:name=".CharacterView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".DiceRoller" />
-        <activity android:name=".CharacterView">
         </activity>
     </application>
 
