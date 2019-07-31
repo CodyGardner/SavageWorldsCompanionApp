@@ -10,13 +10,14 @@ public class Character {
     // com.example.savageworldscompanionapp.Character info
     private String characterName;
     private String characterRace;
-    private String characterRank;
+    //private String characterRank;
 
     // Edge and Hindrance features to be more appropriately implemented in the future
     // For now, a count of each will suffice for implementing their roles in character creation
     private int majorHindrances;
     private int minorHindrances;
     private int edges;
+
 
     // Statistics
     private int charisma;
@@ -33,7 +34,7 @@ public class Character {
     public String getInitFilePath() { return initFilePath; }
     public String getCharacterName() { return characterName; }
     public String getCharacterRace() { return characterRace; }
-    public String getCharacterRank() { return characterRank; }
+    //public String getCharacterRank() { return characterRank; }
     public int getMajorHindrances() { return majorHindrances; }
     public int getMinorHindrances() { return minorHindrances; }
     public int getEdges() { return edges; }
@@ -49,7 +50,7 @@ public class Character {
     public void setInitFilePath(String str) { initFilePath = str; }
     public void setCharacterName(String str) { characterName = str; }
     public void setCharacterRace(String str) { characterRace = str; }
-    public void setCharacterRank(String str) { characterRank = str; }
+    //public void setCharacterRank(String str) { characterRank = str; }
     public void setMajorHindrances(int i) { majorHindrances = i; }
     public void setMinorHindrances(int i) { minorHindrances = i; }
     public void setEdges(int i) { edges = i; }

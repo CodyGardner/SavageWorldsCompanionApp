@@ -102,7 +102,7 @@
                 android:background="@android:color/darker_gray" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
@@ -128,19 +128,46 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/strLabel"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/agiLabel"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/attrSt"
+                            android:text="@string/attrAg"
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/strVal"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/agiVal"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="end"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="@string/num_zero"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/smaLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/attrSm"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/smaVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
                             android:text="@string/num_zero"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -152,7 +179,7 @@
 
                         <TextView
                             android:id="@+id/spiLabel"
-                            android:layout_width="fill_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/attrSp"
@@ -160,10 +187,12 @@
 
                         <TextView
                             android:id="@+id/spiVal"
-                            android:layout_width="fill_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="end"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
                             android:text="@string/num_zero"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -174,19 +203,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView10"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/strLabel"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/attrAg"
+                            android:text="@string/attrSt"
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/textView11"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/strVal"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="end"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
                             android:text="@string/num_zero"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -197,42 +228,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView12"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/attrSm"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/textView13"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="end"
-                            android:text="@string/num_zero"
-                            android:textSize="18sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/textView14"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/vigLabel"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/attrVi"
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/textView15"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/vigVal"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="end"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
                             android:text="@string/num_zero"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -250,19 +260,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView16"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/pacLabel"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/pace"
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/textView17"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/pacVal"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="end"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
                             android:text="@string/num_zero"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -273,19 +285,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView18"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/parLabel"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/parry"
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/textView19"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/parVal"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="end"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
                             android:text="@string/num_zero"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -296,19 +310,53 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView20"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/togLabel"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/toughness"
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/textView21"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/togVal"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="end"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="@string/num_zero"
+                            android:textSize="18sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/divider3"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/edgeHead"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/edges"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/edgeVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
                             android:text="@string/num_zero"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -319,24 +367,57 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView22"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/majHindHead"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/charisma"
+                            android:text="@string/major"
                             android:textSize="18sp" />
 
                         <TextView
-                            android:id="@+id/textView23"
-                            android:layout_width="fill_parent"
+                            android:id="@+id/majHindVal"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="end"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
+                            android:text="@string/num_zero"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/minHindLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/minor"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/minHindVal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="end"
+                            android:paddingLeft="5dp"
+                            android:paddingRight="5dp"
                             android:text="@string/num_zero"
                             android:textSize="18sp" />
                     </LinearLayout>
 
                 </LinearLayout>
+
+                <View
+                    android:id="@+id/divider5"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0"
+                    android:background="@android:color/darker_gray" />
 
                 <LinearLayout
                     android:layout_width="fill_parent"
@@ -345,12 +426,12 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/edgeHead"
+                        android:id="@+id/skillHead"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="@string/edges"
-                        android:textSize="20sp"
+                        android:gravity="center"
+                        android:text="@string/skills"
+                        android:textSize="20dp"
                         android:textStyle="bold" />
                 </LinearLayout>
 

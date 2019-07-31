@@ -5,8 +5,8 @@
     <string name="character_info">Character Info</string>
     <string name="edges">Edges</string>
     <string name="skills">Skills</string>
-    <string name="major">Major</string>
-    <string name="minor">Minor</string>
+    <string name="major">Major Hindrances</string>
+    <string name="minor">Minor Hindrances</string>
     <string name="wounds">Wounds</string>
     <string name="fatigue">Fatigue</string>
     <string name="charisma">Charisma</string>
@@ -78,4 +78,5 @@
     <string name="placeholder_name">Mr. T</string>
     <string name="placeholder_race">Night Elf Mohawk</string>
     <string name="num_zero">0</string>
+
 </resources>
