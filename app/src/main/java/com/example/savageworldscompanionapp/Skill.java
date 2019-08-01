@@ -12,10 +12,18 @@ public class Skill extends Trait{
     public Attribute getAssociatedAttribute() { return associatedAttribute; }
 
     public boolean raiseLevel(){
-        return true;
+        if (level < 5){
+            ++level;
+            return true;
+        }
+        return false;
     }
 
     public boolean lowerLevel(){
-        return true;
+        if (level > 0){
+            --level;
+            return true;
+        }
+        return false;
     }
 }

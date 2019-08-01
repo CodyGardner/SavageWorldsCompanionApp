@@ -6,7 +6,7 @@ abstract class Trait {
     protected int modifier;
 
     // Constructor
-    Trait(String n) { // Every Train must have a name
+    Trait(String n) { // Every Trait must have a name
         name = n;
         level = 0;
         modifier = 0;

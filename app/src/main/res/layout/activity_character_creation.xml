@@ -10,6 +10,7 @@
         android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <TextView
@@ -27,7 +28,8 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary" >
+            android:background="@color/colorPrimary"
+            app:tabIndicatorColor="#d81b60">
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/tabItem"
