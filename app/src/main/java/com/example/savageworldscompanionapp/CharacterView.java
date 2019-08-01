@@ -7,6 +7,7 @@ import androidx.core.content.res.ResourcesCompat;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -68,18 +69,16 @@ public class CharacterView extends AppCompatActivity {
         Intent i;
         try {
             i = getIntent();
-
-
             //Parse intent elements
-            if (i.getStringExtra("Name") != null)
+            if (i.getCharSequenceExtra("Name") != "")
                 charName.setText(i.getStringExtra("Name"));
             else
-                charName.setText("Mr. T");
-            if (i.getStringExtra("Race") != null)
-                charName.setText(i.getStringExtra("Race"));
+              charName.setText("Mr. T");
+            if (i.getCharSequenceExtra("Race") != "")
+                charRace.setText(i.getStringExtra("Race"));
             else
                 charName.setText("Night Elf Mohawk");
-            strView.setText(i.getIntExtra("Strength", 0));
+            /*strView.setText(i.getIntExtra("Strength", 0));
             spiView.setText(i.getIntExtra("Spirit", 0));
             agiView.setText(i.getIntExtra("Agility", 0));
             smaView.setText(i.getIntExtra("Smarts", 0));
@@ -88,9 +87,10 @@ public class CharacterView extends AppCompatActivity {
             parView.setText(i.getIntExtra("Parry", 0));
             togView.setText(i.getIntExtra("Toughness", 0));
             majHindView.setText(i.getIntExtra("Major Hindrances", 0));
-            minHindView.setText(i.getIntExtra("Minor Hindrances", 0));
+            minHindView.setText(i.getIntExtra("Minor Hindrances", 0));*/
         }
         catch(Exception e) {
+            Log.e("Exception!",e.toString());
             charName.setText(R.string.placeholder_name);
             charRace.setText(R.string.placeholder_race);
         }

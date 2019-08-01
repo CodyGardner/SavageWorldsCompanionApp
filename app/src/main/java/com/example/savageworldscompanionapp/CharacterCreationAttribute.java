@@ -8,12 +8,15 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.widget.Button;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -38,6 +41,12 @@ public class CharacterCreationAttribute extends Fragment {
     private Character character;
     private Button createButton;
 
+    //Text views
+    private EditText editTextName;
+    private EditText editTextRace;
+    private EditText editTextMajHind;
+    private EditText editTextMinHind;
+
     private OnFragmentInteractionListener mListener;
 
     public CharacterCreationAttribute() {
@@ -56,6 +65,7 @@ public class CharacterCreationAttribute extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment CharacterCreationAttribute.
      */
+
     // TODO: Rename and change types and number of parameters
     public static CharacterCreationAttribute newInstance(String param1, String param2) {
         CharacterCreationAttribute fragment = new CharacterCreationAttribute();
@@ -79,11 +89,19 @@ public class CharacterCreationAttribute extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_character_creation_attribute, container, false);
+        editTextName = view.findViewById(R.id.CharacterInfoNameView);
+        editTextRace = view.findViewById(R.id.CharacterInfoRaceInput);
         createButton = view.findViewById(R.id.CreateCharacterButton);
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Log.d("Activity: ",getActivity().toString());
                 Intent intent = new Intent(getActivity(), CharacterView.class);
+                Log.d("Debug: ","Started intent!");
+                intent.putExtra("Name",editTextName.getText().toString());
+                Log.d("Debug: ","Added name!");
+                intent.putExtra("Race",editTextRace.getText().toString());
+                Log.d("Debug: ","Added race!");
                 startActivity(intent);
             }
         });
