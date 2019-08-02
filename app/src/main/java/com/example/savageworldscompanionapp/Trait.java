@@ -1,5 +1,8 @@
 package com.example.savageworldscompanionapp;
 
+import android.content.Intent;
+import android.util.Log;
+
 abstract class Trait {
     protected String name;
     protected int level;
@@ -18,4 +21,12 @@ abstract class Trait {
     public void setModifier(int i) {modifier = i;}
     abstract boolean raiseLevel();
     abstract boolean lowerLevel();
+
+    // Passes this item's level and modifier into an intent
+    public void passThroughIntent(Intent intent){
+        intent.putExtra(name + "_level", level);
+        Log.d("Debug", "Added " + name + " level!");
+        intent.putExtra(name + "_modifier", modifier);
+        Log.d("Debug", "Added " + name + " modifier!");
+    }
 }

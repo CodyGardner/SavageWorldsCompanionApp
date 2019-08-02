@@ -1,5 +1,8 @@
 package com.example.savageworldscompanionapp;
 
+import android.content.Intent;
+import android.util.Log;
+
 import java.util.ArrayList;
 
 public class Character {
@@ -7,7 +10,7 @@ public class Character {
     private String imageFilePath;
     private String initFilePath;
 
-    // com.example.savageworldscompanionapp.Character info
+    // Character info
     private String characterName;
     private String characterRace;
     //private String characterRank;
@@ -87,4 +90,29 @@ public class Character {
     // Functions
     public void saveCharacter() { } // Save character to init file
     public void loadFromFile(String fileName) { } // Use when selecting character to load data from file
+    public void passThroughIntent(Intent intent){
+        // Character info
+        intent.putExtra("Name", characterName);
+        Log.d("Debug", "Added name!");
+        intent.putExtra("Race", characterRace);
+        Log.d("Debug", "Added race!");
+        intent.putExtra("MinorHindrances", minorHindrances);
+        Log.d("Debug", "Added minor hindrances!");
+        intent.putExtra("MajorHindrances", majorHindrances);
+        Log.d("Debug", "Added major hindrances");
+        intent.putExtra("Edges", edges);
+        Log.d("Debug", "Added edges!");
+        intent.putExtra("Charisma", charisma);
+        Log.d("Debug", "Added charisma!");
+        intent.putExtra("Pace", pace);
+        Log.d("Debug", "Added pace!");
+        intent.putExtra("Parry", parry);
+        Log.d("Debug", "Added parry!");
+        intent.putExtra("Toughness", toughness);
+        Log.d("Debug", "Added toughness!");
+
+        // Traits
+        for(Trait t : attributes) { t.passThroughIntent(intent); }
+        for(Trait t: skills) { t.passThroughIntent(intent); }
+    }
 }

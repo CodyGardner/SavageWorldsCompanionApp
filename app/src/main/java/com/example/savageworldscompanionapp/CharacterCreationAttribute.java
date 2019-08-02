@@ -98,10 +98,11 @@ public class CharacterCreationAttribute extends Fragment {
                 //Log.d("Activity: ",getActivity().toString());
                 Intent intent = new Intent(getActivity(), CharacterView.class);
                 Log.d("Debug: ","Started intent!");
-                intent.putExtra("Name",editTextName.getText().toString());
-                Log.d("Debug: ","Added name!");
-                intent.putExtra("Race",editTextRace.getText().toString());
-                Log.d("Debug: ","Added race!");
+
+                character.setCharacterName(editTextName.getText().toString());
+                character.setCharacterRace(editTextRace.getText().toString());
+                // Pass character details through intents
+                character.passThroughIntent(intent);
                 startActivity(intent);
             }
         });
