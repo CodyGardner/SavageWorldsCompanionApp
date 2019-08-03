@@ -74,12 +74,12 @@ public class CharacterView extends AppCompatActivity {
         try {
 
             //Parse intent elements
-            if (i.getStringExtra("Name") != "")
+            if (i.getStringExtra("Name") != null)
                 charName.setText(i.getStringExtra("Name"));
             else
               charName.setText("Mr. T");
             Log.d("","Got name!");
-            if (i.getStringExtra("Race") != "")
+            if (i.getStringExtra("Race") != null)
                 charRace.setText(i.getStringExtra("Race"));
             else
                 charName.setText("Night Elf Mohawk");

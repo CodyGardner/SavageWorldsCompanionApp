@@ -1,11 +1,13 @@
 package com.example.savageworldscompanionapp;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Character {
+public class Character implements Serializable {
     // Data files
     private String imageFilePath;
     private String initFilePath;
@@ -110,9 +112,15 @@ public class Character {
         Log.d("Debug", "Added parry!");
         intent.putExtra("Toughness", toughness);
         Log.d("Debug", "Added toughness!");
+        Bundle intentSkills = new Bundle();
+        intentSkills.putSerializable("Skills",skills);
+        Bundle intentAttribs = new Bundle();
+        intentAttribs.putSerializable("Attributes",attributes);
+        intent.putExtra("Skills",intentSkills);
+        intent.putExtra("Attributes",intentAttribs);
 
         // Traits
-        for(Trait t : attributes) { t.passThroughIntent(intent); }
-        for(Trait t: skills) { t.passThroughIntent(intent); }
+        //for(Trait t : attributes) { t.passThroughIntent(intent); }
+        //for(Trait t: skills) { t.passThroughIntent(intent); }
     }
 }

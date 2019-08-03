@@ -1,6 +1,8 @@
 package com.example.savageworldscompanionapp;
 
-public class Skill extends Trait{
+import java.io.Serializable;
+
+public class Skill extends Trait implements Serializable {
     private Attribute associatedAttribute;
 
     // Constructor
