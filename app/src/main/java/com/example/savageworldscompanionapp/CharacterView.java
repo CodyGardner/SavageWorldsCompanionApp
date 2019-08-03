@@ -33,6 +33,7 @@ public class CharacterView extends AppCompatActivity {
     TextView togView;
     TextView majHindView;
     TextView minHindView;
+    TextView edgeView;
 
     //Declare a SharedPreferences object
     Context context = CharacterView.this;
@@ -60,6 +61,7 @@ public class CharacterView extends AppCompatActivity {
         togView = findViewById(R.id.togVal);
         majHindView = findViewById(R.id.majHindVal);
         minHindView = findViewById(R.id.minHindVal);
+        edgeView = findViewById(R.id.edgeVal);
 
         View v = findViewById(R.id.charViewToolbar);
         registerForContextMenu(v);
@@ -67,27 +69,36 @@ public class CharacterView extends AppCompatActivity {
 
         //Receive intent
         Intent i;
+        i = getIntent();
+        Log.d("","Got intent data!");
         try {
-            i = getIntent();
+
             //Parse intent elements
-            if (i.getCharSequenceExtra("Name") != "")
+            if (i.getStringExtra("Name") != "")
                 charName.setText(i.getStringExtra("Name"));
             else
               charName.setText("Mr. T");
-            if (i.getCharSequenceExtra("Race") != "")
+            Log.d("","Got name!");
+            if (i.getStringExtra("Race") != "")
                 charRace.setText(i.getStringExtra("Race"));
             else
                 charName.setText("Night Elf Mohawk");
-            /*strView.setText(i.getIntExtra("Strength", 0));
-            spiView.setText(i.getIntExtra("Spirit", 0));
-            agiView.setText(i.getIntExtra("Agility", 0));
-            smaView.setText(i.getIntExtra("Smarts", 0));
-            vigView.setText(i.getIntExtra("Vigor", 0));
-            pacView.setText(i.getIntExtra("Pace", 0));
-            parView.setText(i.getIntExtra("Parry", 0));
-            togView.setText(i.getIntExtra("Toughness", 0));
-            majHindView.setText(i.getIntExtra("Major Hindrances", 0));
-            minHindView.setText(i.getIntExtra("Minor Hindrances", 0));*/
+            Log.d("","Got race!");
+            /*strView.setText(Integer.toString(i.getIntExtra("Strength", 0)));
+            spiView.setText(Integer.toString(i.getIntExtra("Spirit", 0)));
+            agiView.setText(Integer.toString(i.getIntExtra("Agility", 0)));
+            smaView.setText(Integer.toString(i.getIntExtra("Smarts", 0)));
+            vigView.setText(Integer.toString(i.getIntExtra("Vigor", 0)));
+            pacView.setText(Integer.toString(i.getIntExtra("Pace", 0)));
+            parView.setText(Integer.toString(i.getIntExtra("Parry", 0)));
+            togView.setText(Integer.toString(i.getIntExtra("Toughness", 0)));*/
+            majHindView.setText(Integer.toString(i.getIntExtra("MajorHindrances", 0)));
+            Log.d("","Got Major Hindrances!");
+            minHindView.setText(Integer.toString(i.getIntExtra("MinorHindrances", 0)));
+            Log.d("","Got minor hindrances!");
+            edgeView.setText(Integer.toString(i.getIntExtra("Edges",0)));
+            Log.d("","Got edges!");
+
         }
         catch(Exception e) {
             Log.e("Exception!",e.toString());
@@ -99,8 +110,7 @@ public class CharacterView extends AppCompatActivity {
         image=findViewById(R.id.imageView);
         image.setImageDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.mohawk, null));
 
-        //Get the IDs for the stat values
-        //charName.setText()
+
 
         //Set stat values based on the stats from SharedResources
         //Or maybe the Character object, if we choose to build one first

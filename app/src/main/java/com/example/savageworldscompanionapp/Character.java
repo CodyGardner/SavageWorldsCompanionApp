@@ -93,9 +93,9 @@ public class Character {
     public void passThroughIntent(Intent intent){
         // Character info
         intent.putExtra("Name", characterName);
-        Log.d("Debug", "Added name!");
+        Log.d("Debug", "Added name: "+characterName);
         intent.putExtra("Race", characterRace);
-        Log.d("Debug", "Added race!");
+        Log.d("Debug", "Added race: "+characterRace);
         intent.putExtra("MinorHindrances", minorHindrances);
         Log.d("Debug", "Added minor hindrances!");
         intent.putExtra("MajorHindrances", majorHindrances);

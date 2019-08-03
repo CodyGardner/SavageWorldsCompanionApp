@@ -46,6 +46,7 @@ public class CharacterCreationAttribute extends Fragment {
     private EditText editTextRace;
     private EditText editTextMajHind;
     private EditText editTextMinHind;
+    private EditText editTextEdges;
 
     private OnFragmentInteractionListener mListener;
 
@@ -91,6 +92,9 @@ public class CharacterCreationAttribute extends Fragment {
         View view = inflater.inflate(R.layout.fragment_character_creation_attribute, container, false);
         editTextName = view.findViewById(R.id.CharacterInfoNameView);
         editTextRace = view.findViewById(R.id.CharacterInfoRaceInput);
+        editTextMajHind = view.findViewById(R.id.CharacterInfoMajorHindrances);
+        editTextMinHind = view.findViewById(R.id.CharacterInfoMinorHindrances);
+        editTextEdges = view.findViewById(R.id.CharacterInfoEdges);
         createButton = view.findViewById(R.id.CreateCharacterButton);
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,8 +105,42 @@ public class CharacterCreationAttribute extends Fragment {
 
                 character.setCharacterName(editTextName.getText().toString());
                 character.setCharacterRace(editTextRace.getText().toString());
+                //For each numerical text field, fall back to 0 if it fails to get the value.
+                try {
+                    character.setMajorHindrances(Integer.parseInt(editTextMajHind.getText().toString()));
+                }
+                catch(Exception e) {
+                    Log.e("Error! ","Failed to get major hindrances!");
+                    Log.e("Message: ",e.toString());
+                    character.setMajorHindrances(0);
+                }
+
+                try {
+                    character.setMinorHindrances(Integer.parseInt(editTextMinHind.getText().toString()));
+                }
+                catch(Exception e) {
+                    Log.e("Error! ","Failed to get minor hindrances!");
+                    Log.e("Message: ",e.toString());
+                    character.setMinorHindrances(0);
+                }
+
+                try {
+                    character.setEdges(Integer.parseInt(editTextEdges.getText().toString()));
+                }
+                catch(Exception e) {
+                    Log.e("Error! ","Failed to get edges!");
+                    Log.e("Message: ",e.toString());
+                    character.setEdges(0);
+                }
+
+                //Pass on to attributes for the next set.
+
+                //Pass on to skills for last set.
+
+
                 // Pass character details through intents
                 character.passThroughIntent(intent);
+                Log.d("Intent information: ",intent.getExtras().toString());
                 startActivity(intent);
             }
         });
