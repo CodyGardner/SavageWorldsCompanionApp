@@ -88,13 +88,13 @@ public class CharacterCreationSkill extends Fragment {
         // attrs = new ArrayList<>();
         attrListItems = new ArrayList<>();
 
-        /*
-        attrs.add(new Attribute(getString(R.string.attrAg), getString(R.string.attrAgShort)));
+
+        /*attrs.add(new Attribute(getString(R.string.attrAg), getString(R.string.attrAgShort)));
         attrs.add(new Attribute(getString(R.string.attrSm), getString(R.string.attrSmShort)));
         attrs.add(new Attribute(getString(R.string.attrSp), getString(R.string.attrSpShort)));
         attrs.add(new Attribute(getString(R.string.attrSt), getString(R.string.attrStShort)));
-        attrs.add(new Attribute(getString(R.string.attrVi), getString(R.string.attrViShort)));
-        */
+        attrs.add(new Attribute(getString(R.string.attrVi), getString(R.string.attrViShort)));*/
+
 
         for (int i = 0; i < character.getAttributes().size(); ++i)
             attrListItems.add(new EditAttributeListItem(character.getAttributes().get(i)));
@@ -133,6 +133,7 @@ public class CharacterCreationSkill extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
 
     /*
      * This interface must be implemented by activities that contain this

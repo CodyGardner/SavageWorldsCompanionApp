@@ -18,6 +18,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
+
 public class CharacterView extends AppCompatActivity {
 
     ImageView image;
@@ -34,6 +36,17 @@ public class CharacterView extends AppCompatActivity {
     TextView majHindView;
     TextView minHindView;
     TextView edgeView;
+    TextView skillAView;
+    TextView skillBView;
+    TextView skillCView;
+    TextView skillDView;
+    TextView skillEView;
+    TextView skillFView;
+    TextView skillGView;
+    TextView skillHView;
+    TextView skillIView;
+    TextView skillJView;
+
 
     //Declare a SharedPreferences object
     Context context = CharacterView.this;
@@ -59,6 +72,7 @@ public class CharacterView extends AppCompatActivity {
         pacView = findViewById(R.id.pacVal);
         parView = findViewById(R.id.parVal);
         togView = findViewById(R.id.togVal);
+
         majHindView = findViewById(R.id.majHindVal);
         minHindView = findViewById(R.id.minHindVal);
         edgeView = findViewById(R.id.edgeVal);
@@ -72,7 +86,6 @@ public class CharacterView extends AppCompatActivity {
         i = getIntent();
         Log.d("","Got intent data!");
         try {
-
             //Parse intent elements
             if (i.getStringExtra("Name") != null)
                 charName.setText(i.getStringExtra("Name"));
@@ -98,6 +111,8 @@ public class CharacterView extends AppCompatActivity {
             Log.d("","Got minor hindrances!");
             edgeView.setText(Integer.toString(i.getIntExtra("Edges",0)));
             Log.d("","Got edges!");
+
+            //Get die skill levels
 
         }
         catch(Exception e) {

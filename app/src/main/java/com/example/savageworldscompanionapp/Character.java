@@ -112,12 +112,15 @@ public class Character implements Serializable {
         Log.d("Debug", "Added parry!");
         intent.putExtra("Toughness", toughness);
         Log.d("Debug", "Added toughness!");
-        Bundle intentSkills = new Bundle();
-        intentSkills.putSerializable("Skills",skills);
-        Bundle intentAttribs = new Bundle();
-        intentAttribs.putSerializable("Attributes",attributes);
-        intent.putExtra("Skills",intentSkills);
-        intent.putExtra("Attributes",intentAttribs);
+
+        for(Attribute i : attributes) {
+            intent.putExtra(i.name, i.level);
+        }
+
+        for(Skill i : skills) {
+            intent.putExtra(i.name, i.level);
+        }
+
 
         // Traits
         //for(Trait t : attributes) { t.passThroughIntent(intent); }

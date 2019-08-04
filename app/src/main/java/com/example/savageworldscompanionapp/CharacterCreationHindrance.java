@@ -1,6 +1,7 @@
 package com.example.savageworldscompanionapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 
@@ -34,7 +36,7 @@ public class CharacterCreationHindrance extends Fragment {
     private String mParam2;
     private Character character;
 
-    ArrayList<Skill> skills;
+    static ArrayList<Skill> skills;
     ArrayList<EditSkillListItem> skillListItems;
     private RecyclerView skillRecyclerView;
     private RecyclerView.Adapter skillAdapter;
@@ -83,14 +85,18 @@ public class CharacterCreationHindrance extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_character_creation_hindrance, container, false);
 
+        //Attach views
+
+
         skills =  new ArrayList<>();
         skillListItems = new ArrayList<>();
 
-        /*
+
         Attribute agility = new Attribute("Agility", "Ag");
         Attribute smarts = new Attribute("Smarts", "Sm");
         Attribute spirit = new Attribute("Spirit", "Sp");
         Attribute strength = new Attribute("Strength", "St");
+        Attribute vigor = new Attribute("Vigor","Vi");
 
         skills.add(new Skill(strength, "Climbing"));
         skills.add(new Skill(agility, "Fighting"));
@@ -102,7 +108,7 @@ public class CharacterCreationHindrance extends Fragment {
         skills.add(new Skill(agility, "Shooting"));
         skills.add(new Skill(agility, "Stealth"));
         skills.add(new Skill(smarts, "Streetwise"));
-        */
+
 
         for (int i = 0; i < character.getSkills().size(); ++i)
             skillListItems.add(new EditSkillListItem(character.getSkills().get(i)));
@@ -156,4 +162,6 @@ public class CharacterCreationHindrance extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
 }

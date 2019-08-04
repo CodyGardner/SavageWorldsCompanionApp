@@ -28,4 +28,8 @@ public class Skill extends Trait implements Serializable {
         }
         return false;
     }
+
+    public void attachModifier(int mod){
+        modifier = mod;
+    }
 }

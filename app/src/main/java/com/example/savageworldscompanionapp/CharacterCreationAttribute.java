@@ -134,10 +134,8 @@ public class CharacterCreationAttribute extends Fragment implements Serializable
                     character.setEdges(0);
                 }
 
-                //Pass on to attributes for the next set.
-
-                //Pass on to skills for last set.
-
+                //Grab attributes and skills
+                //Apparently it's already grabbing them...?
 
                 // Pass character details through intents
                 character.passThroughIntent(intent);
