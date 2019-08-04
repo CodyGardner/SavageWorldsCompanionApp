@@ -24,9 +24,32 @@ abstract class Trait {
 
     // Passes this item's level and modifier into an intent
     public void passThroughIntent(Intent intent){
-        intent.putExtra(name + "_level", level);
+        String slevel;
+
+        switch(level){
+            case 1:
+                slevel = "D4";
+                break;
+            case 2:
+                slevel = "D6";
+                break;
+            case 3:
+                slevel = "D8";
+                break;
+            case 4:
+                slevel = "D10";
+                break;
+            case 5:
+                slevel = "D12";
+                break;
+            default:
+                slevel = "UT";
+                break;
+        }
+        intent.putExtra(name + "_level", slevel);
         Log.d("Debug", "Added " + name + " level!");
         intent.putExtra(name + "_modifier", modifier);
         Log.d("Debug", "Added " + name + " modifier!");
+
     }
 }
